@@ -1,6 +1,15 @@
+@font-face {
+	font-family: 'Vazir';
+	src: url('fonts/Vazir.eot');
+	src: url('fonts/Vazir.eot?#iefix') format('embedded-opentype'), 
+		   url('fonts/Vazir.woff2') format('woff2'), 
+		   url('fonts/Vazir.woff') format('woff'), 
+		   url('fonts/Vazir.ttf')  format('truetype');
+  }
+
 body{
 	margin: 0px;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Vazir;
 	font-size: 25px;
 	line-height: 1.2em;
 	color:#333;
@@ -64,7 +73,7 @@ DAT RESET BUTTON
     font-size: 25px;
     font-weight: 300;
     text-align: center;
-    width: 100px;
+    width: 170px;
     height: 30px;
     letter-spacing: 2px;
     padding: 2px 0;
