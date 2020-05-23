@@ -7,6 +7,12 @@ and RENDER IT INTO THE CAPTION
 
 var Election = {};
 
+var us2br = function(winner) {
+	ppl = {"square": "مربع", "triangle": "مثلث", "pentagon": "پنج‌ضلعی", "bob": "دایره", "hexagon": "شش‌ضلعی"};
+	console.log(winner);
+	return ppl[winner];
+}
+
 Election.score = function(model, options){
 
 	// Tally the approvals & get winner!
@@ -301,9 +307,9 @@ Election.plurality = function(model, options){
 		if(options.sidebar){
 			text += _icon(c)+" got "+tally[c]+" votes<br>";
 		}else{
-			text += c+": "+tally[c];
-			if(options.verbose) text+=" votes";
-			if(i<model.candidates.length-1) text+=", ";
+			text += us2br(c)+": "+tally[c];
+			if(options.verbose) text+=" رأی";
+			if(i<model.candidates.length-1) text+="، ";
 		}
 	}
 	if(options.sidebar){
@@ -312,7 +318,7 @@ Election.plurality = function(model, options){
 	}
 	text += "</span>";
 	text += "<br>";
-	text += "<b style='color:"+color+"'>"+winner.toUpperCase()+"</b> WINS";
+	text += "<b style='color:"+color+"'>"+us2br(winner).toUpperCase()+"</b> می‌بره";
 	model.caption.innerHTML = text;
 
 };
