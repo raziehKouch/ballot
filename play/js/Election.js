@@ -38,16 +38,16 @@ Election.score = function(model, options){
 		// Caption
 		var text = "";
 		text += "<span class='small'>";
-		text += "<b>highest average score wins</b><br>";
+		text += "<b>بیشترین میانگین امتیاز می‌بره</b><br>";
 		for(var i=0; i<model.candidates.length; i++){
 			var c = model.candidates[i].id;
-			text += _icon(c)+"'s score: "+(tally[c].toFixed(2))+" out of 5.00<br>";
+			text += " با امتیاز"+" "+(tally[c].toFixed(2))+ " از 5.00" + " "+ _icon(c) + "<br>";
 		}
 		text += "<br>";
-		text += _icon(winner)+" has the highest score, so...<br>";
+		text += ".."+" بیشترین امتیاز رو داره، بنابراین"+" "+_icon(winner)+"<br>";
 		text += "</span>";
 		text += "<br>";
-		text += "<b style='color:"+color+"'>"+winner.toUpperCase()+"</b> WINS";
+		text += "<b style='color:"+color+"'>"+us2br(winner).toUpperCase()+"</b> می‌بره";
 		model.caption.innerHTML = text;
 
 	}
@@ -75,16 +75,16 @@ Election.approval = function(model, options){
 		// Caption
 		var text = "";
 		text += "<span class='small'>";
-		text += "<b>most approvals wins</b><br>";
+		text += "<b>بیشترین تأیید می‌بره</b><br>";
 		for(var i=0; i<model.candidates.length; i++){
 			var c = model.candidates[i].id;
-			text += _icon(c)+" got "+tally[c]+" approvals<br>";
+			text += " تأییدهاش"+" "+tally[c]+ " تاست" + " "+ _icon(c) + "<br>";
 		}
 		text += "<br>";
-		text += _icon(winner)+" is most approved, so...<br>";
+		text += "..."+" بیشترین تأیید رو داره، بنابراین"+" "+_icon(winner)+"<br>";
 		text += "</span>";
 		text += "<br>";
-		text += "<b style='color:"+color+"'>"+winner.toUpperCase()+"</b> WINS";
+		text += "<b style='color:"+color+"'>"+us2br(winner).toUpperCase()+"</b> می‌بره";
 		model.caption.innerHTML = text;
 
 	}
@@ -95,7 +95,7 @@ Election.condorcet = function(model, options){
 
 	var text = "";
 	text += "<span class='small'>";
-	text += "<b>who wins each one-on-one?</b><br>";
+	text += "<b>برنده رأی‌گیری‌های یک-به-یک کیه؟</b><br>";
 
 	var ballots = model.getBallots();
 
@@ -134,7 +134,8 @@ Election.condorcet = function(model, options){
 				by = bWins;
 				to = aWins;
 			}
-			text += _icon(a.id)+" vs "+_icon(b.id)+": "+_icon(winner.id)+" wins by "+by+" to "+to+"<br>";
+			text += ":"+_icon(b.id)+" در مقابل "+_icon(a.id)+"<br>"
+			text += " می‌بره "+"با نتیجهٔ:"+by+" در مقابل "+to+_icon(winner.id)+"<br>";
 
 		}
 	}
@@ -151,17 +152,18 @@ Election.condorcet = function(model, options){
 	text += "<br>";
 	if(topWinner){
 		var color = _colorWinner(model, topWinner);
-		text += _icon(topWinner)+" beats all other candidates in one-on-one races.<br>";
+		text += "نماینده‌های دیگه رو در"+" "+_icon(topWinner)+"<br>";
+		text += "رقابت‌های یک-به-یک شکست می‌ده" + "<br>"
 		text += "</span>";
 		text += "<br>";
-		text += "<b style='color:"+color+"'>"+topWinner.toUpperCase()+"</b> WINS";
+		text += "<b style='color:"+color+"'>"+us2br(topWinner).toUpperCase()+"</b> می‌بره";
+
 	}else{
 		model.canvas.style.borderColor = "#000"; // BLACK.
-		text += "NOBODY beats everyone else in one-on-one races.<br>";
+		text += "،هیچ نماینده‌ای، همهٔ نماینده‌های دیگه رو در یک-به-یک‌ها نبرده<br>";
 		text += "</span>";
-		text += "<br>";
-		text += "THERE'S NO WINNER.<br>";
-		text += "<b id='ohno'>OH NO.</b>";
+		text += "بنابراین برنده‌ای نداریم<br>";
+		text += "<b id='ohno'>.نههه</b>";
 	}
 
 	// what's the loop?
@@ -202,7 +204,7 @@ Election.borda = function(model, options){
 		text += "..."+"<i>کم‌ترین</i> امتیاز رو داره، بنابراین"+" "+_icon(winner)+"<br>";
 		text += "</span>";
 		text += "<br>";
-		text += "<b style='color:"+color+"'>"+winner.toUpperCase()+"</b> WINS";
+	text += "<b style='color:"+color+"'>"+us2br(winner).toUpperCase()+"</b> می‌بره";
 		model.caption.innerHTML = text;
 
 	}
@@ -224,7 +226,7 @@ Election.irv = function(model, options){
 
 	while(!finalWinner){
 
-		text += "<b>: "+roundNum+" دور</b><br>";
+		text += ":"+"<b>دور "+roundNum+"ام</b><br>";
 		text += "انتخاب اول رأی‌دهنه‌ها کیان؟<br>";
 
 		// Tally the approvals & get winner!

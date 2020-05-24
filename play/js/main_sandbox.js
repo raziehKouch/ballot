@@ -190,9 +190,9 @@ function main(config){
 		if(initialConfig.features>=2){ // CANDIDATES as feature.
 
 			var voters = [
-				{name:"one", num:1, margin:5},
-				{name:"two", num:2, margin:5},
-				{name:"three", num:3},
+				{name:"یکی", num:1, margin:5},
+				{name:"دو", num:2, margin:5},
+				{name:"سه", num:3},
 			];
 			var onChooseVoters = function(data){
 
@@ -209,7 +209,7 @@ function main(config){
 
 			};
 			window.chooseVoters = new ButtonGroup({
-				label: "چند گروه رأی‌دهنده؟?",
+				label: "چند تا گروه رأی‌دهنده؟",
 				width: 70,
 				data: voters,
 				onChoose: onChooseVoters
@@ -222,10 +222,10 @@ function main(config){
 		if(initialConfig.features>=3){ // VOTERS as feature.
 
 			var candidates = [
-				{name:"two", num:2, margin:4},
-				{name:"three", num:3, margin:4},
-				{name:"four", num:4, margin:4},
-				{name:"five", num:5}
+				{name:"دو", num:2, margin:4},
+				{name:"سه", num:3, margin:4},
+				{name:"چهار", num:4, margin:4},
+				{name:"پنج", num:5}
 			];
 			var onChooseCandidates = function(data){
 
