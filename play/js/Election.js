@@ -185,7 +185,7 @@ Election.borda = function(model, options){
 	// NO WINNER?! OR TIE?!?!
 	if(!winner){
 
-		var text = "<b>NOBODY WINS</b>";
+		var text = "<b>هیچ‌کسی نمی‌بره</b>";
 		model.caption.innerHTML = text;
 
 	}else{
@@ -193,13 +193,13 @@ Election.borda = function(model, options){
 		// Caption
 		var text = "";
 		text += "<span class='small'>";
-		text += "<b>lower score is better</b><br>";
+		text += "<b>امتیاز کم‌تر بهتره</b><br>";
 		for(var i=0; i<model.candidates.length; i++){
 			var c = model.candidates[i].id;
-			text += _icon(c)+"'s total score: "+tally[c]+"<br>";
+			text += "مجموع امتیازات "+_icon(c)+" برابره با: "+tally[c]+"<br>";
 		}
 		text += "<br>";
-		text += _icon(winner)+" has the <i>lowest</i> score, so...<br>";
+		text += "..."+"<i>کم‌ترین</i> امتیاز رو داره، بنابراین"+" "+_icon(winner)+"<br>";
 		text += "</span>";
 		text += "<br>";
 		text += "<b style='color:"+color+"'>"+winner.toUpperCase()+"</b> WINS";
@@ -224,8 +224,8 @@ Election.irv = function(model, options){
 
 	while(!finalWinner){
 
-		text += "<b>round "+roundNum+":</b><br>";
-		text += "who's voters' #1 choice?<br>";
+		text += "<b>: "+roundNum+" دور</b><br>";
+		text += "انتخاب اول رأی‌دهنه‌ها کیان؟<br>";
 
 		// Tally the approvals & get winner!
 		var pre_tally = _tally(model, function(tally, ballot){
@@ -253,14 +253,14 @@ Election.irv = function(model, options){
 		var ratio = tally[winner]/model.getTotalVoters();
 		if(ratio>=0.5){
 			finalWinner = winner;
-			text += _icon(winner)+" has more than 50%<br>";
+			text += "بیش از ۵۰٪ آٰرا رو داره "+_icon(winner)+"<br>";
 			break;
 		}
 
 		// Otherwise... runoff...
 		var loser = _countLoser(tally);
-		text += "nobody's more than 50%. ";
-		text += "eliminate loser, "+_icon(loser)+". next round!<br><br>";
+		text += ".هیچ‌کسی بیش از ۵۰٪ نیست <br>";
+		text += "با حذف "+_icon(loser)+"، .به دور بعد می‌ریم<br><br>";
 
 		// ACTUALLY ELIMINATE
 		candidates.splice(candidates.indexOf(loser), 1); // remove from candidates...
@@ -279,7 +279,7 @@ Election.irv = function(model, options){
 	var color = _colorWinner(model, finalWinner);
 	text += "</span>";
 	text += "<br>";
-	text += "<b style='color:"+color+"'>"+winner.toUpperCase()+"</b> WINS";
+	text += "<b style='color:"+color+"'>"+us2br(winner).toUpperCase()+"</b> می‌بره";
 	model.caption.innerHTML = text;
 
 

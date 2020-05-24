@@ -361,7 +361,7 @@ function main(config){
 			// Create a "save" button
 			var saveDOM = document.createElement("div");
 			saveDOM.id = "save";
-			saveDOM.innerHTML = "‌ذخیره‌سازی:";
+			saveDOM.innerHTML = "‌ذخیره‌:";
 			saveDOM.style.top = "470px";
 			saveDOM.style.left = "120px";
 			saveDOM.onclick = function(){
