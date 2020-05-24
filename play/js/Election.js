@@ -300,12 +300,12 @@ Election.plurality = function(model, options){
 	var text = "";
 	text += "<span class='small'>";
 	if(options.sidebar){
-		text += "<b>most votes wins</b><br>";
+		text += "<b>بیشترین رأی می‌بره</b><br>";
 	}
 	for(var i=0; i<model.candidates.length; i++){
 		var c = model.candidates[i].id;
 		if(options.sidebar){
-			text += _icon(c)+" got "+tally[c]+" votes<br>";
+			text += " رأی‌هاش"+" "+tally[c]+ " تاست" + " "+ _icon(c) + "<br>";
 		}else{
 			text += us2br(c)+": "+tally[c];
 			if(options.verbose) text+=" رأی";
@@ -314,7 +314,7 @@ Election.plurality = function(model, options){
 	}
 	if(options.sidebar){
 		text += "<br>";
-		text += _icon(winner)+" has most votes, so...<br>";
+		text += "..."+" بیشترین رأی رو داره، بنابراین"+" "+_icon(winner)+"<br>";
 	}
 	text += "</span>";
 	text += "<br>";

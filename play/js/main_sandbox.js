@@ -179,7 +179,7 @@ function main(config){
 
 		};
 		window.chooseSystem = new ButtonGroup({
-			label: "what voting system?",
+			label: "کدام روش رأی‌گیری؟",
 			width: 108,
 			data: votingSystems,
 			onChoose: onChooseSystem
@@ -209,7 +209,7 @@ function main(config){
 
 			};
 			window.chooseVoters = new ButtonGroup({
-				label: "how many groups of voters?",
+				label: "چند گروه رأی‌دهنده؟?",
 				width: 70,
 				data: voters,
 				onChoose: onChooseVoters
@@ -242,7 +242,7 @@ function main(config){
 
 			};
 			window.chooseCandidates = new ButtonGroup({
-				label: "how many candidates?",
+				label: "چند تا نامزد؟",
 				width: 52,
 				data: candidates,
 				onChoose: onChooseCandidates
@@ -275,7 +275,7 @@ function main(config){
 		// CREATE A RESET BUTTON
 		var resetDOM = document.createElement("div");
 		resetDOM.id = "reset";
-		resetDOM.innerHTML = "reset";
+		resetDOM.innerHTML = "بازنشانی";
 		resetDOM.style.top = "340px";
 		resetDOM.style.left = "350px";
 		resetDOM.onclick = function(){
@@ -361,7 +361,7 @@ function main(config){
 			// Create a "save" button
 			var saveDOM = document.createElement("div");
 			saveDOM.id = "save";
-			saveDOM.innerHTML = "save:";
+			saveDOM.innerHTML = "‌ذخیره‌سازی:";
 			saveDOM.style.top = "470px";
 			saveDOM.style.left = "120px";
 			saveDOM.onclick = function(){
@@ -372,7 +372,7 @@ function main(config){
 			// The share link textbox
 			linkText = document.createElement("input");
 			linkText.id = "savelink";
-			linkText.placeholder = "[when you save your model, a link you can copy will show up here]";
+			linkText.placeholder = "[وقتی مدلی رو ذخیره می‌کنید، لینکی که می‌تونید کپی‌ایش کنید این‌جا ظاهر می‌شه]";
 			linkText.setAttribute("readonly", true);
 			linkText.onclick = function(){
 				linkText.select();
@@ -405,7 +405,7 @@ function main(config){
 
 		// System?
 		data.s = config.system;
-		console.log("voting system: "+data.s);
+		console.log("روش رأی‌گیری: "+data.s);
 
 		// Positions...
 		var positions = save(true);
@@ -433,7 +433,7 @@ function main(config){
 		// Put it in the save link box!
 		var link = "http://ncase.me/ballot/sandbox?m="+uri;
 		var savelink = document.getElementById("savelink");
-		savelink.value = "saving...";
+		savelink.value = "در حال ذخیره کردن...";
 		setTimeout(function(){
 			savelink.value = link;
 		},750);
