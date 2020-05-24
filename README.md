@@ -1,6 +1,6 @@
-![](http://i.imgur.com/8ZzgDiV.png)
+![](http://pourdamghani.github.io/ballot/img/fa-logo.png)
 
-**TO BUILD A BETTER BALLOT**     
-an interactive guide to alternative voting systems
+**به‌سوی رأی‌گیری بهینه‌تر**     
+راهنمایی تعاملی برای سامانه‌های رأی‌گیری جایگزین
 
-**[play/read it here](http://ncase.me/ballot)**
+**[این جا بازی کنید/ بخونید](https://pourdamghani.github.io/ballot/)**
