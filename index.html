@@ -78,7 +78,7 @@ THE SPOILER EFFECT
 <div class="sim-intro">
 
 	<p class="caption" style="margin-top:30px">
-		<b><span style="font-size:2.5em;">کلیک کنید و بکشید</span><br>هم کاندیداها و هم رأی‌دهنده رو:</b>
+		<b><span style="font-size:2.5em;">کلیک کنید و بکشید</span><br>هم نامزدها و هم رأی‌دهنده رو:</b>
 	</p>
 	<iframe src="play/model1.html" width="305" height="360" scrolling="no"></iframe>
 
@@ -138,7 +138,7 @@ THE SPOILER EFFECT
 	<p>درسته. مرشد مربعی
 		که
 		<em>‌کم‌ترین</em>
-		محبوبیت رو در میان کاندیداها داشت، الان برنده شده!
+		محبوبیت رو در میان نامزدها داشت، الان برنده شده!
 		این به خاطر اینه که وقتی دو تا کاندیدای خوب داشته باشیم،
 		رأی‌های هم‌دیگه رو «می‌قاپن»
 		و اجازه می‌دن یه نامزد سومی برنده بشه.
@@ -300,26 +300,26 @@ THE ALTERNATIVE BALLOTS
 <div class="sim-ballot">
 
 	<h2 class="ballot_title" style="margin-bottom: 0.2em;">نخست‌نفری</h2>
-	<p class="ballot_caption">مثل قبل. روی کاندیداها و رأی‌دهنده کلیلک کنید و بکشید</p>
+	<p class="ballot_caption">مثل قبل. روی نامزدها و رأی‌دهنده کلیلک کنید و بکشید</p>
 
 	<iframe src="play/ballot1.html" width="655" height="256" scrolling="no"></iframe>
 </div>
 <div class="words">
 
 	<p><strong>روش شمارش آرا:</strong> 
-		رأی‌های داده شده به هر کاندیدا رو جمع می‌زنیم.
+		رأی‌های داده شده به هر نامزد رو جمع می‌زنیم.
 		کسی که بیشترین رأی رو اورده باشه برنده است.</p>
 	<p>به اندازهٔ کافی منطقی به نظر میاد. اما همان‌طور که قبلا دیدید
 		می‌تونه به عیب عجیبی منجر بشه،
-		وقتی که وجود دو تا کاندیدای
+		وقتی که وجود دو تا نامزد
 		<em>خوب</em>
-		باعث می‌شه برندهٔ انتخابات کاندیدای
+		باعث می‌شه برندهٔ انتخابات نامزد
 		<em>بد</em>
 		سومی بشه.
 		به همین دلیله بعضی از مردم تصمیم می‌گیرن
 		«استراتژیک»
 		رأی بدن،
-		یعنی صادفانه به کاندیدای مورد علاقه‌شون رأی ندن،
+		یعنی صادفانه به نامزد مورد علاقه‌شون رأی ندن،
 		به جاش نامزد بد رو بین بد و بدتر انتخاب کنن.
 		رأی دادن استراتژیک اشکالی نداره
 		- اما! -
@@ -377,25 +377,67 @@ THE ALTERNATIVE BALLOTS
 		روش دورحذفی فوری یه کم پیچیده‌تر از روش نخست‌نفریه، و این‌جوری کار می‌کنه:
 	</p>
 
-	<p>IRV is a bit more complicated than FPTP, but here's how it works:</p>
-
 	<ol>
-	<li>Count up the #1 choices.</li>
-	<li>If someone has more than 50%, they win! END.</li>
-	<li>If not, eliminate the last-place loser.</li>
-	<li>Run a new &quot;round&quot; of the election, minus that loser.</li>
-	<li>Repeat until someone has 50% or more.</li>
+	<li>تعداد باری که هر نامزد به عنوان نفر اول انتخاب شده رو بشمارید.</li>
+	<li>اگر کسی بیش از ۵۰٪ آرا رو داشت، برنده می‌شه! و شمارش آرا به اتمام می‌رسه</li>
+	<li>اگه نه، فردی که کم‌ترین مقدار نصیب‌اش شده رو حذف شده در نظر بگیرید.</li>
+	<li>افرادی که نفر حذف شده براشون نفر اول بوده، نفر دوم‌شون رو جایگزین کنید.</li>
+	<li>یه دور دیگه دیگه شمارش رو با فرضیات جدید انجام بدید. </li>
+	<li>این کار رو این‌قدر تکرار کنید تا یه نفر بیش از ۵۰٪ درصد مجموع رو به دست بیاره.</li>
 	</ol>
 
-	<p>If that seems like too much, there <em>is</em> a much simpler method of counting ranked ballots...</p>
+	<p>اگه این روش بیش از حد کار داره، یه روش خیلی ساده‌تر دیگه
+		برای شمارش آرا...
+		<em>وجود داره</em>
+	</p>
+	<p><strong>شمارش بوردا:</strong>
+	فقط کافیه رتبهٔ نامزدها رو با هم جمع کنیم.
+	مثل گلف، هر کی که
+	<em>کم‌ترین</em>
+	جمع رو داشت برنده است.
+	شمارش بوردا در کشور اسلوونی و تعدادی جزایر در میکرونزی انجام می‌شه.
+	</p>
 
-	<p><strong>Borda Count:</strong> Simply add up the rank numbers. Like in golf, whoever has the <em>lowest</em> score, wins. Borda count is used in Slovenia and a bunch of tiny islands in Micronesia.</p>
+	<p>اما اگه روش شمارش محاسبه‌گرانه‌تری می‌خواید، می‌تونید استفاده کنید از...</p>
 
-	<p>But if you want an even nerdier way of voting, you could try...</p>
+	<p><strong>روش کندروسه:</strong>
+	بر اساس اطلاعات گرفته شده از آرا رأی‌دهندگان،
+	بین هر دو نامزد یه 
+	«شبه‌انتخابات»
+	شبیه‌سازی کنید.
+	<em>اگر</em>
+	نامزدی وجود داشته باشه که از همهٔ نامزدهای دیگه  
+		«شبه‌انتخابات‌ها یک به یک»
+		برنده بشه،
+		اون کاندیدا
+		<em>واقعا</em>
+		برندهٔ انتخاباته.
+		اما اوان
+		«اگر»
+		که در ابتدا اومد پیش‌فرض خیلی بزرگیه.
+		(همون‌جوری که بعدا می‌بینیم...)
+		ویژگی خوب این روش اینه که اگه برنده‌ای
+		<em>انتخاب بشه</em>،
+		این روش همیشه
+		از نظر تئوری
+		«بهترین»
+		نامزد ممکن رو انتخاب می‌کنه!
+		در حال حاضر این روش توسط هیچ دولتی استفاده می‌شه،
+		و فقط مخصوص خوره‌های فناوری‌ایه که محاسبات رو دوست دارن!
+</p>
 
-	<p><strong>Condorcet Method:</strong> Run a simulated &quot;election&quot; between every pair of candidates, using the info on voters' ballots. IF there's a candidate who beats all other candidates in one-on-one &quot;elections&quot;, that candidate wins the <em>real</em> election. However, that's a very big &quot;IF&quot;. (as we'll see later...) The upside is, when this method <em>does</em> pick a winner, it's always the “theoretically best” candidate! Currently, this method is not being used by any governments, and is only being used by neeerrrrrds.</p>
-
-	<p>So, those are the voting systems <em>where you rank candidates</em> – the ones that Kenneth Arrow proved would <em>always</em> be unfair in some big way! But what of voting systems where you <em>don't</em> rank candidates? They're less well-known, but now, at least <em>you'll</em> know 'em:</p>
+	<p>خوب این روش‌های شمارش آرا بود که
+		<em>مبتنی بر رتبه‌بندی افراد بود</em>
+		- همون‌هایی که کنت ارو می‌گفت
+		<em>همیشه</em>
+		حالتی وجود داره که توش غیرمنصفانه باشن!
+		اما اگه نامزدها رو رتبه بندی
+		<em>نکنیم</em>
+		چی؟
+		روش‌های کم‌تر شناخته شده‌ای وجود داره، که البته 
+		<em>حداقل شما</em>
+		با خوندن این متن باهشون آشنا می‌شید.
+	</p>
 
 </div>
 <div class="sim-ballot">
