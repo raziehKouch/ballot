@@ -30,7 +30,7 @@ Election.score = function(model, options){
 	// NO WINNER?! OR TIE?!?!
 	if(!winner){
 
-		var text = "<b>NOBODY WINS</b>";
+		var text = "<b>هیچ‌کسی نمی‌بره</b>";
 		model.caption.innerHTML = text;
 
 	}else{
@@ -41,7 +41,7 @@ Election.score = function(model, options){
 		text += "<b>بیشترین میانگین امتیاز می‌بره</b><br>";
 		for(var i=0; i<model.candidates.length; i++){
 			var c = model.candidates[i].id;
-			text += " با امتیاز"+" "+(tally[c].toFixed(2))+ " از 5.00" + " "+ _icon(c) + "<br>";
+			text += _icon(c) +" با امتیاز"+" "+(tally[c].toFixed(2))+ " از 5.00" + "<br>";
 		}
 		text += "<br>";
 		text += _icon(winner)+" "+"بیشترین امتیاز رو داره، بنابراین..."+"<br>";
@@ -67,7 +67,7 @@ Election.approval = function(model, options){
 	// NO WINNER?! OR TIE?!?!
 	if(!winner){
 
-		var text = "<b>NOBODY WINS</b>";
+		var text = "<b>هیچ‌کسی نمی‌بره</b>";
 		model.caption.innerHTML = text;
 
 	}else{
@@ -78,7 +78,7 @@ Election.approval = function(model, options){
 		text += "<b>بیشترین تأیید می‌بره</b><br>";
 		for(var i=0; i<model.candidates.length; i++){
 			var c = model.candidates[i].id;
-			text += " تأییدهاش"+" "+tally[c]+ " تاست" + " "+ _icon(c) + "<br>";
+			text += _icon(c)+ " تأییدهاش"+" "+tally[c]+ " تاست" + "<br>";
 		}
 		text += "<br>";
 		text += _icon(winner)+" "+"بیشترین تأیید رو داره، بنابراین..."+"<br>";
@@ -134,8 +134,8 @@ Election.condorcet = function(model, options){
 				by = bWins;
 				to = aWins;
 			}
-			text += ":"+_icon(b.id)+" در مقابل "+_icon(a.id)+"<br>"
-			text += " می‌بره "+"با نتیجهٔ:"+by+" در مقابل "+to+_icon(winner.id)+"<br>";
+			text += _icon(a.id)+" در مقابل "+_icon(b.id)+":<br>"
+			text += _icon(winner.id)+" می‌بره "+"با نتیجهٔ: "+by+" بر "+to+"<br>";
 
 		}
 	}
@@ -152,15 +152,14 @@ Election.condorcet = function(model, options){
 	text += "<br>";
 	if(topWinner){
 		var color = _colorWinner(model, topWinner);
-		text += "نماینده‌های دیگه رو در"+" "+_icon(topWinner)+"<br>";
-		text += "رقابت‌های یک-به-یک شکست می‌ده" + "<br>"
+		text += _icon(topWinner)+ " نماینده‌های دیگه رو دررقابت‌های یک-به-یک شکست می‌ده"+"<br>";
 		text += "</span>";
 		text += "<br>";
 		text += "<b style='color:"+color+"'>"+us2br(topWinner).toUpperCase()+"</b> می‌بره";
 
 	}else{
 		model.canvas.style.borderColor = "#000"; // BLACK.
-		text += "،هیچ نماینده‌ای، همهٔ نماینده‌های دیگه رو در یک-به-یک‌ها نبرده<br>";
+		text += "هیچ نماینده‌ای، همهٔ نماینده‌های دیگه رو در یک-به-یک‌ها نبرده.<br>";
 		text += "</span>";
 		text += "بنابراین برنده‌ای نداریم<br>";
 		text += "<b id='ohno'>.نههه</b>";
@@ -255,14 +254,14 @@ Election.irv = function(model, options){
 		var ratio = tally[winner]/model.getTotalVoters();
 		if(ratio>=0.5){
 			finalWinner = winner;
-			text += "بیش از ۵۰٪ آٰرا رو داره "+_icon(winner)+"<br>";
+			text += _icon(winner)+" بیش از ۵۰٪ آٰرا رو داره "+"<br>";
 			break;
 		}
 
 		// Otherwise... runoff...
 		var loser = _countLoser(tally);
-		text += ".هیچ‌کسی بیش از ۵۰٪ نیست <br>";
-		text += "با حذف "+_icon(loser)+"، .به دور بعد می‌ریم<br><br>";
+		text += "هیچ‌کسی بیش از ۵۰٪ نیست. <br>";
+		text += "با حذف "+_icon(loser)+"، به دور بعد می‌ریم.<br><br>";
 
 		// ACTUALLY ELIMINATE
 		candidates.splice(candidates.indexOf(loser), 1); // remove from candidates...
@@ -307,7 +306,7 @@ Election.plurality = function(model, options){
 	for(var i=0; i<model.candidates.length; i++){
 		var c = model.candidates[i].id;
 		if(options.sidebar){
-			text += " رأی‌هاش"+" "+tally[c]+ " تاست" + " "+ _icon(c) + "<br>";
+			text += _icon(c) + " رأی‌هاش"+" "+tally[c]+ " تاست" + "<br>";
 		}else{
 			text += us2br(c)+": "+tally[c];
 			if(options.verbose) text+=" رأی";
