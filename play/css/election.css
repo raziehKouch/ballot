@@ -7,23 +7,23 @@ Election/Sandbox design:
 ************/
 
 #left, #center, #right{
-	float:left;
+	float:right;
 	height: 320px;
 }
 #left{
 	width:220px;
-	padding-right: 20px;
+	padding-left: 20px;
 }
 #center{
 	width:320px;
 }
 #right{
 	width:220px;
-	padding-left: 20px;
+	padding-right: 20px;
 	overflow-y: auto;
 }
 #caption{
-	text-align: left;
+	text-align: right;
 	font-size: 23px;
 	line-height: 1.0em;
 }

@@ -81,7 +81,7 @@ Election.approval = function(model, options){
 			text += " تأییدهاش"+" "+tally[c]+ " تاست" + " "+ _icon(c) + "<br>";
 		}
 		text += "<br>";
-		text += "..."+" بیشترین تأیید رو داره، بنابراین"+" "+_icon(winner)+"<br>";
+		text += _icon(winner)+" "+"بیشترین تأیید رو داره، بنابراین..."+"<br>";
 		text += "</span>";
 		text += "<br>";
 		text += "<b style='color:"+color+"'>"+us2br(winner).toUpperCase()+"</b> می‌بره";
@@ -201,7 +201,7 @@ Election.borda = function(model, options){
 			text += "مجموع امتیازات "+_icon(c)+" برابره با: "+tally[c]+"<br>";
 		}
 		text += "<br>";
-		text += "..."+"<i>کم‌ترین</i> امتیاز رو داره، بنابراین"+" "+_icon(winner)+"<br>";
+		text += _icon(winner)+" "+"<i>کم‌ترین</i> امتیاز رو داره، بنابراین..."+"<br>";
 		text += "</span>";
 		text += "<br>";
 	text += "<b style='color:"+color+"'>"+us2br(winner).toUpperCase()+"</b> می‌بره";
@@ -316,7 +316,8 @@ Election.plurality = function(model, options){
 	}
 	if(options.sidebar){
 		text += "<br>";
-		text += "..."+" بیشترین رأی رو داره، بنابراین"+" "+_icon(winner)+"<br>";
+		text += _icon(winner)+" "+"بیشترین رأی رو داره، بنابراین..."+"<br>";
+
 	}
 	text += "</span>";
 	text += "<br>";
