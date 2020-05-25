@@ -44,7 +44,7 @@ Election.score = function(model, options){
 			text += " با امتیاز"+" "+(tally[c].toFixed(2))+ " از 5.00" + " "+ _icon(c) + "<br>";
 		}
 		text += "<br>";
-		text += ".."+" بیشترین امتیاز رو داره، بنابراین"+" "+_icon(winner)+"<br>";
+		text += _icon(winner)+" "+"بیشترین امتیاز رو داره، بنابراین..."+"<br>";
 		text += "</span>";
 		text += "<br>";
 		text += "<b style='color:"+color+"'>"+us2br(winner).toUpperCase()+"</b> می‌بره";

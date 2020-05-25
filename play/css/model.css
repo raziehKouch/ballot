@@ -13,6 +13,7 @@ body{
 	font-size: 25px;
 	line-height: 1.2em;
 	color:#333;
+	direction:rtl;
 
 	-moz-user-select: none;
 	-webkit-user-select: none;
