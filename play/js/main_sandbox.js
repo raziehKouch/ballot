@@ -43,7 +43,7 @@ function main(config){
 
 	// Defaults...
 	config = config || {};
-	config.system = config.system || "FPTP";
+	config.system = config.system || "نخست‌نفری";
 	config.candidates = config.candidates || 3;
 	config.voters = config.voters || 1;
 	config.features = config.features || 1; // 1-basic, 2-voters, 3-candidates, 4-save
@@ -157,12 +157,12 @@ function main(config){
 
 		// Which voting system?
 		var votingSystems = [
-			{name:"FPTP", voter:PluralityVoter, election:Election.plurality, margin:4},
-			{name:"IRV", voter:RankedVoter, election:Election.irv},
-			{name:"Borda", voter:RankedVoter, election:Election.borda, margin:4},
-			{name:"Condorcet", voter:RankedVoter, election:Election.condorcet},
-			{name:"Approval", voter:ApprovalVoter, election:Election.approval, margin:4},
-			{name:"Score", voter:ScoreVoter, election:Election.score}
+			{name:"نخست‌نفری", voter:PluralityVoter, election:Election.plurality, margin:4},
+			{name:"دورحذفی", voter:RankedVoter, election:Election.irv},
+			{name:"بوردا", voter:RankedVoter, election:Election.borda, margin:4},
+			{name:"کندروسه", voter:RankedVoter, election:Election.condorcet},
+			{name:"تأییدی", voter:ApprovalVoter, election:Election.approval, margin:4},
+			{name:"امتیازی", voter:ScoreVoter, election:Election.score}
 		];
 		var onChooseSystem = function(data){
 
