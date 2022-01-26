@@ -42,7 +42,7 @@ Loader.onload = function(){
 	model.onUpdate = function(){
 		var id = model.voters[0].ballot.vote;
 		var color = Candidate.graphics[id].fill;
-		var text = "به <b style='color:"+color+"'>"+us2br(id).toUpperCase()+"</b>رأی می‌ده ";
+		var text = "به <b style='color:"+color+"'>"+us2br(id).toUpperCase()+"</b> رأی می‌ده ";
 		model.caption.innerHTML = text;
 	};
 
